@@ -21,6 +21,8 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed() #練習10:すべてのキーの押下状態の取得
+
+        kb_rct.move_ip(-1, 0) #演習1:こうかとんを背景と同じ速度で移動
         if key_lst[pg.K_UP]: #練習10:上矢印キーが押されていたら
             kb_rct.move_ip(0, -1) #こうかとんを上に移動
         if key_lst[pg.K_DOWN]: #練習10:下矢印キーが押されていたら
@@ -28,7 +30,7 @@ def main():
         if key_lst[pg.K_LEFT]: #練習10:左矢印キーが押されていたら
             kb_rct.move_ip(-1, 0) #こうかとんを左に移動 
         if key_lst[pg.K_RIGHT]: #練習10:右矢印キーが押されていたら
-            kb_rct.move_ip(+1, 0) #こうかとんを右に移動
+            kb_rct.move_ip(+2, 0) #こうかとんを右に移動
         x = tmr%3200 #練習5
         screen.blit(bg_img, [-x, 0]) #練習2
         screen.blit(bg_img2, [-x+1600, 0]) #練習7
